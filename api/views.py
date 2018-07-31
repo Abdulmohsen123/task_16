@@ -23,7 +23,6 @@ class RestaurantDetailView(RetrieveAPIView):
     lookup_field = 'id'
     lookup_url_kwarg = 'restaurant_id'
 
-
 # Complete Me
 class RestaurantCreateView(CreateAPIView):
     queryset = Restaurant.objects.all()
