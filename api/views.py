@@ -4,6 +4,7 @@ from rest_framework.generics import (
     RetrieveAPIView,
     RetrieveUpdateAPIView,
     DestroyAPIView,
+    CreateAPIView,
 )
 from .serializers import (
     RestaurantListSerializer,
@@ -24,8 +25,9 @@ class RestaurantDetailView(RetrieveAPIView):
 
 
 # Complete Me
-class RestaurantCreateView():
-
+class RestaurantCreateView(CreateAPIView):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantListSerializer
 
 class RestaurantUpdateView(RetrieveUpdateAPIView):
     queryset = Restaurant.objects.all()
